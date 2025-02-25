@@ -1,0 +1,11 @@
+The Quick-Find algorithm is a simple and efficient algorithm for solving the dynamic connectivity problem.
+It maintains an array `id` where `id[i]` is the component identifier for the element `i`.
+Initially, each element is in its own component.
+
+The `connected` method checks if two elements are in the same component by comparing their component identifiers.
+
+The `union` method merges two components by changing all entries with the component identifier of one element to the component identifier of the other element.
+
+The time complexity for the `connected` method is O(1), while the time complexity for the `union` method is O(n) in the worst case.
+
+This is too slow for larger problems

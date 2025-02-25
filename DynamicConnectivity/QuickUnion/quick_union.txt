@@ -1,0 +1,34 @@
+Given id[i], then the value id[i] indicates the PARENT of element i (tree structure)
+
+Key here is to draw the data, then from the way the data is related we understand how to form
+the computer data representation. ex: parent id being held 
+
+Quick Union init = O(N), union = O(N+), find = O(N)
+Where + indicates the cost of finding roots 
+Thus we can see it is the same / slower than QuickFind
+
+QuickFind cons:
+- union too expensive (O(N))
+- Flat trees, but too expensive to keep this way 
+
+
+QuickUnion cons:
+- Trees can get tall but
+- Find too expensive O(N)
+
+Ways to improve?
+1. Weighting
+    - modify to keep small trees then link root of smaller tree to larger tree
+    - smaller tree always lower when linking 
+    - keeps average distance to root lower 
+    - time of union / connected = O(lg(N)) 
+        When does depth increase? depth += 1 when another tree merges the size at least doubles
+        because the parent tree is always >=
+        Size of tree doubles at most lg(N)
+    - init = O(N)
+
+2. Path Compression (+ weighted)
+    - After computing the root of p, set the id of each examined note to that root
+    - Amortized analysis 
+        c(N + M lg*N)
+        linear in the real world (not quite in theory but is so in practice)
